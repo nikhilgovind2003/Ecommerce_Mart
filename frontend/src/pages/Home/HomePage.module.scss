@@ -1,0 +1,21 @@
+.homeContainer {
+  .banner {
+    display: flex;
+    margin-bottom: 66px;
+  }
+  margin: 0 110px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .homeContainer {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    margin: 0;
+  }
+
+}

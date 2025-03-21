@@ -1,0 +1,282 @@
+// Colors and Variables
+$black: #000;
+$white: #fff;
+$gray: #ccc;
+$hoverColor: #ff4500;
+$btnColor: #27ae60;
+
+// Breakpoints
+$mobile: 1024px;
+$tablet: 768px;
+$small: 480px;
+
+.navbarContainer {
+  display: flex;
+  flex-direction: column;
+
+  /* Top Info Bar */
+  .infoBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $black;
+    color: $gray;
+    padding: 10px 150px;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+      text-align: center;
+      width: 100%;
+
+      .shopNow {
+        color: $white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: underline;
+
+        &:hover {
+          color: lighten($btnColor, 20%);
+        }
+      }
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+
+      span {
+        font-size: 14px;
+      }
+
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+
+  /* Main Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 150px;
+    border-bottom: 1px solid $gray;
+    background: $white;
+    position: relative;
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Right Section */
+    .navbarRight {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+
+      @media (max-width: $mobile) {
+        gap: 20px;
+      }
+    }
+
+    /* Menu Toggle Button */
+    .menuToggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: $black;
+      transition: 0.3s;
+
+      &:hover {
+        color: $hoverColor;
+      }
+
+      @media (max-width: $mobile) {
+        display: block;
+      }
+    }
+
+    /* Navigation Links */
+    .navLinks {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      transition: all 0.3s ease-in-out;
+
+      li {
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: $white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        padding: 20px;
+      }
+    }
+
+    /* Show Menu Toggle */
+    .showMenu {
+      display: flex;
+    }
+
+    /* Search and Cart Section */
+    .searchCart {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .search {
+        display: flex;
+        align-items: center;
+        border: 1px solid $gray;
+        border-radius: 5px;
+        padding: 5px 10px;
+
+        input {
+          border: none;
+          outline: none;
+          font-size: 14px;
+          padding: 5px;
+          width: 200px;
+          transition: width 0.3s;
+
+          &::placeholder {
+            color: $gray;
+          }
+
+          &:focus {
+            width: 250px;
+          }
+        }
+
+        .icon {
+          color: $black;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            color: $hoverColor;
+          }
+        }
+      }
+
+      .icon {
+        font-size: 22px;
+        color: $black;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: $mobile) {
+    .infoBar {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+      padding: 15px;
+    }
+
+    .navbar {
+      padding: 20px;
+
+      .navbarRight {
+        gap: 20px;
+      }
+
+      .menuToggle {
+        display: block;
+      }
+
+      .navLinks {
+        display: none;
+        flex-direction: column;
+      }
+
+      .searchCart {
+        gap: 15px;
+
+        .search {
+          order: -1; // Move search bar to the top
+          width: 100%;
+          justify-content: center;
+
+          input {
+            width: 90%;
+          }
+        }
+      }
+
+      .showMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .navbar {
+      padding: 20px 40px;
+
+      .navbarRight {
+        gap: 30px;
+      }
+
+      .searchCart {
+        .search {
+          input {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $small) {
+    .navbar {
+      padding: 15px;
+
+      .navbarRight {
+        gap: 15px;
+      }
+
+      .searchCart {
+        .search {
+          input {
+            width: 100px;
+          }
+        }
+      }
+
+      .menuToggle {
+        font-size: 24px;
+      }
+    }
+  }
+}
