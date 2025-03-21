@@ -1,0 +1,145 @@
+$black: #000;
+$white: #fff;
+$gray: #ccc;
+$hoverColor: #ff4500;
+$btnColor: #27ae60;
+
+.newArrival {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .featuredTag {
+      color: #f05454;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .largeCard {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
+      background: $black;
+
+      img {
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        position: absolute;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      .cardContent {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+
+        h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        a {
+          color: #f05454;
+          text-decoration: none;
+          font-weight: bold;
+          transition: 0.3s;
+
+          &:hover {
+            color: #ff7878;
+          }
+        }
+      }
+    }
+
+    .smallCards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      
+      .verysmallcontainer {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+
+      }
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: $black;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        .cardContent {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+
+          h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+
+          p {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+
+          a {
+            color: #f05454;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+
+            &:hover {
+              color: #ff7878;
+            }
+          }
+        }
+      }
+    }
+  }
+}

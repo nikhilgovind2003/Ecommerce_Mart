@@ -1,0 +1,124 @@
+$white: #fff;
+$black: #000;
+$red: #DB4444;
+$gray: #ccc;
+$green: #27ae60;
+$orange: #f39c12;
+
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  background: $white;
+  border-radius: 12px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+
+    // Make .addtocart visible on parent hover
+    .addtocart {
+      opacity: 1; 
+      transform: translateY(0);   // Smooth slide-up effect
+    }
+  }
+}
+
+
+.imageContainer {
+  position: relative;
+  height: 300px;
+  display: flex;
+  background: $gray;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 70%;
+    object-fit: cover;
+  }
+
+  .actions {
+    position: absolute;
+    flex-direction: column;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .discountBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: $red;
+    color: $white;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .iconBtn {
+    background: $white;
+    border: 1px solid $gray;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: $red;
+      color: $white;
+    }
+  }
+
+  .addtocart {
+    width: 100%;
+    background: $black;
+    color: $white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);  // Initially hidden with slight offset
+  }
+}
+
+.info {
+  padding: 15px;
+
+  h3 {
+    font-size: 18px;
+    color: $black;
+  }
+
+  .price {
+    display: flex;
+    gap: 10px;
+    
+    .salePrice {
+      color: $green;
+      font-weight: bold;
+    }
+
+    .originalPrice {
+      color: $gray;
+      text-decoration: line-through;
+    }
+  }
+
+  .rating {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: $orange;
+  }
+}

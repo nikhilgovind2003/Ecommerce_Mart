@@ -1,0 +1,314 @@
+$black: #000;
+$white: #fff;
+$green: #00ff6a;
+$gray: #ccc;
+$hoverColor: #ff4500;
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $black;
+  color: $white;
+  padding: 60px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+
+  /* Categories Section */
+  .categoriesContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    text-align: left;
+    max-width: 50%;
+
+    .categoryHeading {
+      color: $green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      max-width: 500px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: $white;
+        color: $black;
+        padding: 20px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        min-width: 100px;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        p {
+          font-size: 32px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        span {
+          font-size: 14px;
+          color: #555;
+        }
+      }
+    }
+
+    .buyNowBtn {
+      background: $green;
+      color: $black;
+      border: none;
+      width: 200px;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      color: $white;
+      transition: 0.3s;
+
+      &:hover {
+        background: $hoverColor;
+        color: $white;
+      }
+    }
+  }
+
+  /* Regular Content Section */
+  .content {
+
+    .text {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      h3 {
+        color: $white;
+        font-size: 18px;
+        font-weight: 100;
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 10px 0;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .shopBtn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: none;
+        color: $white;
+        border: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 15px;
+        font-size: 30px;
+
+        i {
+          color: $white;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+
+  /* Image Container */
+  .imageContainer {
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+
+    .bannerImage {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    padding: 50px;
+    
+    .categoriesContent {
+      max-width: 60%;
+      
+      h1 {
+        font-size: 40px;
+      }
+
+      .timer div {
+        min-width: 80px;
+        padding: 15px;
+        
+        p {
+          font-size: 28px;
+        }
+        
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .buyNowBtn {
+        width: 180px;
+        padding: 12px 30px;
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .imageContainer {
+      max-width: 40%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+
+    .categoriesContent {
+      max-width: 100%;
+      align-items: center;
+
+      .timer {
+        gap: 15px;
+        
+        div {
+          min-width: 90px;
+          padding: 15px;
+          
+          p {
+            font-size: 26px;
+          }
+          
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .imageContainer {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+    
+    .categoriesContent {
+      h1 {
+        font-size: 36px;
+        max-width: 100%;
+      }
+
+      .timer {
+        flex-wrap: wrap;
+        gap: 10px;
+
+        div {
+          min-width: 75px;
+          min-height: 60px;
+          padding: 10px;
+          
+          p {
+            font-size: 22px;
+          }
+
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .buyNowBtn {
+        width: 160px;
+        padding: 10px 25px;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .imageContainer {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px;
+
+    .categoriesContent {
+      h1 {
+        font-size: 30px;
+      }
+
+      .timer {
+        div {
+          min-width: 60px;
+          padding: 10px;
+
+          p {
+            font-size: 18px;
+          }
+
+          span {
+            font-size: 8px;
+          }
+        }
+      }
+
+      .buyNowBtn {
+        width: 140px;
+        padding: 8px 20px;
+        font-size: 12px;
+      }
+    }
+
+    .imageContainer {
+      max-width: 100%;
+    }
+  }
+}
